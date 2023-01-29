@@ -2,18 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import { useHistory } from 'react-router-dom';
-//material ui
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+
 
 function MovieList() {
-
+    // hooks
     const dispatch = useDispatch();
     const history = useHistory();
     const movies = useSelector(store => store.movies);
-
+    // FETCH_MOVIES will grab all the Movies and render them to the dom by mapping
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
@@ -23,6 +19,7 @@ function MovieList() {
         
         console.log('clicked poster', data.id);
         let movieId = data.id;
+
         // dispatch({
         //     type: 'FETCH_MOVIEDETAILS',
         //     payload: movieId

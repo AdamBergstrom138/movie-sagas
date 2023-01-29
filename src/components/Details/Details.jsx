@@ -4,14 +4,14 @@ import { useHistory, useParams } from 'react-router-dom';
 
 
 function Details() {
-
+    // hooks
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
     const movieDetails = useSelector(store => store.movieDetails)
 
-    console.log("movie details in Details:",movieDetails);
-
+    console.log("movie details in Details:", movieDetails);
+    // FETCH_MOVIEDETAILS grabs the info for one movie based on the ID we clicked on
     useEffect(() => {
         const movieId = params.id;
         console.log('movie ID', movieId);
@@ -20,8 +20,8 @@ function Details() {
             payload: movieId
         });
     }, []);
-
-    const handleBackClick = (event) => {
+    // back button
+    const handleBackClick = () => {
 
         history.push('/')
 }
@@ -36,7 +36,7 @@ function Details() {
                     <div className='detailsBox' key={index}>
                         <img src={details.poster}/>
                         <h3>Title: {details.title}</h3>
-                        <h4>Genres: {details.genres}</h4>
+                        <h4>Genres: {details.genres}</h4> 
                         <h5>Description:</h5>
                         <p>{details.description}</p>
                     </div>
