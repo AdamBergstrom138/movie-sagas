@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import { useHistory } from 'react-router-dom';
+//material ui
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 function MovieList() {
 
@@ -28,14 +33,32 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
+            <Box 
+            m="auto"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{
+            width: 400,
+            height: 150,
+            backgroundColor: 'primary.light'
+            }}>
+                <Typography 
+                variant="h4" 
+                gutterBottom
+                align='center'
+                >
+            MovieList
+            </Typography>
+            </Box>
+            {/* <h1>MovieList</h1> */}
             <section className="movies">
                 {movies.map(movie => {
+                    
                     return (
-                        <div key={movie.id} >
+                        <div className='movieBox' key={movie.id} >
                             <h3>{movie.title}</h3>
                             <img onClick={() => handleClick(movie)} src={movie.poster} alt={movie.title}/>
-
                         </div>
                     );
                 })}
