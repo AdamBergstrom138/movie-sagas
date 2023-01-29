@@ -11,6 +11,17 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    const handleClick = (event) => {
+        event.preventDefault();
+        console.log('clicked poster');
+
+        // dispatch({
+        //     type: 'SET_FEELING', 
+        //     payload: feeling
+        // })
+        // history.push('/understanding')
+}
+
     return (
         <main>
             <h1>MovieList</h1>
@@ -19,7 +30,8 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img onClick={handleClick} src={movie.poster} alt={movie.title}/>
+
                         </div>
                     );
                 })}
