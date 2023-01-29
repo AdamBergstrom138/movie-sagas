@@ -30,3 +30,11 @@
   padding: 1%;
   margin: 1%;
 }
+
+.detailsBox {
+  background-color: rgb(182, 174, 174);
+  border: 3px solid black;
+  border-radius: 1%;
+  padding: 1%;
+  margin: 1%;
+}

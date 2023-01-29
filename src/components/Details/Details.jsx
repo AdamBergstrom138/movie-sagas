@@ -33,10 +33,11 @@ function Details() {
             <div>
             {movieDetails.map((details, index) => {
                 return (
-                    <div key={index}>
+                    <div className='detailsBox' key={index}>
                         <img src={details.poster}/>
-                        <h3>{details.title}</h3>
-                        <h4>{details.genres}</h4>
+                        <h3>Title: {details.title}</h3>
+                        <h4>Genres: {details.genres}</h4>
+                        <h5>Description:</h5>
                         <p>{details.description}</p>
                     </div>
                 )
