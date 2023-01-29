@@ -8,7 +8,6 @@ function Details() {
     const dispatch = useDispatch();
     const history = useHistory();
     const params = useParams();
-    const movies = useSelector(store => store.movies);
     const movieDetails = useSelector(store => store.movieDetails)
 
     console.log("movie details in Details:",movieDetails);
@@ -30,6 +29,7 @@ function Details() {
     return (
         <main>
             <h1>Details</h1>
+            <h1>{movieDetails.title}</h1>
             <div>
             {movieDetails.map((details, index) => {
                 return (
