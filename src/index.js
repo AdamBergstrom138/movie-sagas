@@ -43,14 +43,38 @@ function* fetchAllGenres() {
     }
         
 }
+function* updateCategory (action){
+  
+    try{
+      const category = action.payload
+  
+      const response = yield axios({
+        method: 'PUT',
+        url: `/api/favorite/${category}`,
+      })
+      yield put ({
+        type: 'SAGA/FETCH_CATEGORY'
+      }) 
+    }catch (error){
+        console.log('deletePlant error:', error)
+    }
+  }
     // TODO fetch single movie? id:?
-function* fetchMovieDetails() {
+function* fetchMovieDetails(action) {
+    // console.log('in fetchMovieDetails', action.payload);
     // get all movies from the DB
     try {
-        const movieDetails = yield axios.get('/api/movie');
-        console.log('get all:', movieDetails.data);
-        yield put({ type: 'SET_MOVIEDETAILS', payload: movieDetails.data });
-
+        const id = action.payload
+  
+        const movieDetails = yield axios({
+          method: 'GET',
+          url: `/api/movie/${id}`,
+        })
+        yield put ({
+          type: 'SET_MOVIEDETAILS',
+          payload: movieDetails.data
+        }) 
+        // console.log(movieDetails);
     } catch {
         console.log('get all error');
     }

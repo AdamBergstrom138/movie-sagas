@@ -11,9 +11,15 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const handleClick = (event) => {
-        event.preventDefault();
-        console.log('clicked poster');
+    const handleClick = (data) => {
+        // event.preventDefault();
+        
+        console.log('clicked poster', data.id);
+        let movieId = data.id;
+        dispatch({
+            type: 'FETCH_MOVIEDETAILS',
+            payload: movieId
+        })
 
         // dispatch({
         //     type: 'SET_FEELING', 
@@ -21,6 +27,18 @@ function MovieList() {
         // })
         // history.push('/understanding')
 }
+// const handleFavorite = (data) => {
+//     setIsFavorited(!isFavorited);
+//     console.log(data.url);
+//     let newFavorite = {
+//       url : data.url
+//     }
+//     //  Dispatch an action to add/remove the gif from the favorites list
+//     dispatch({
+//       type: "SAGA/ADD_FAVORITES",
+//       payload: newFavorite
+//     });
+//   };
 
     return (
         <main>
@@ -30,7 +48,7 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img onClick={handleClick} src={movie.poster} alt={movie.title}/>
+                            <img onClick={() => handleClick(movie)} src={movie.poster} alt={movie.title}/>
 
                         </div>
                     );
