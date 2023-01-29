@@ -12,25 +12,9 @@ function App() {
   return (
     <>
     <div className="App">
-    <Box 
-      m="auto"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      sx={{
-      width: 400,
-      height: 150,
-      backgroundColor: 'primary.dark'
-      }}>
-        <Typography 
-        variant="h3" 
-        gutterBottom
-        align='center'
-        >
-        The Movies Saga!
-        </Typography>
-    </Box>
-      {/* <h1>The Movies Saga!</h1> */}
+    <div className='header'>
+      <h1>The Movies Saga!</h1>
+    </div>
       <Router>        
         <Route path="/" exact>
           <MovieList />

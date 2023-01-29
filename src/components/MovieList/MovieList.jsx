@@ -33,25 +33,9 @@ function MovieList() {
 
     return (
         <main>
-            <Box 
-            m="auto"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            sx={{
-            width: 400,
-            height: 150,
-            backgroundColor: 'primary.light'
-            }}>
-                <Typography 
-                variant="h4" 
-                gutterBottom
-                align='center'
-                >
-            MovieList
-            </Typography>
-            </Box>
-            {/* <h1>MovieList</h1> */}
+            <div className='movieListHeader'>
+                <h2>Movie List</h2>
+            </div>
             <section className="movies">
                 {movies.map(movie => {
                     

@@ -38,3 +38,18 @@
   padding: 1%;
   margin: 1%;
 }
+.header{
+  background-color: rgb(224, 228, 92);
+  border: 3px solid black;
+  border-radius: 1%;
+  padding: 1%;
+  margin: 1%;
+}
+.movieListHeader {
+  background-color: rgb(92, 133, 228);
+  border: 3px solid black;
+  border-radius: 1%;
+  padding: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
