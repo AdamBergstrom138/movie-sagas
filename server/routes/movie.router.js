@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 
 });
 // GET route for JUST ONE movie:
-// not sure on this '/details/:id'
 router.get('/:id', (req, res) => {
   const queryText = `SELECT "movies"."title", "movies"."poster", "movies"."description",
   ARRAY_AGG("genres"."name") AS "genres"
@@ -28,8 +27,8 @@ router.get('/:id', (req, res) => {
   `;
   pool.query(queryText, [req.params.id])
     .then((result) => { res.send(result.rows); })
-    .catch((err) => {
-      console.log('Error completing SELECT movie query', err);
+    .catch((error) => {
+      console.log('Error completing SELECT movie query', error);
       res.sendStatus(500);
     });
 });

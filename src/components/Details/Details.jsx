@@ -35,10 +35,9 @@ function Details() {
                 return (
                     <div key={index}>
                         <img src={details.poster}/>
-                        <p>{details.title}</p>
-                        <p>{details.genres}</p>
+                        <h3>{details.title}</h3>
+                        <h4>{details.genres}</h4>
                         <p>{details.description}</p>
-
                     </div>
                 )
             })}
