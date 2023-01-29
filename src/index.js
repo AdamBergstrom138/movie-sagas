@@ -75,7 +75,7 @@ function* fetchMovieDetails(action) {
         }) 
         // console.log(movieDetails);
     } catch {
-        console.log('get all error');
+        console.log('fetch Movie error');
     }
         
 }

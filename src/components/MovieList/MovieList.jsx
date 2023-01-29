@@ -18,16 +18,12 @@ function MovieList() {
         
         console.log('clicked poster', data.id);
         let movieId = data.id;
-        dispatch({
-            type: 'FETCH_MOVIEDETAILS',
-            payload: movieId
-        })
-
         // dispatch({
-        //     type: 'SET_FEELING', 
-        //     payload: feeling
+        //     type: 'FETCH_MOVIEDETAILS',
+        //     payload: movieId
         // })
-        history.push('/details')
+
+        history.push(`/details/${movieId}`)
 }
 
     return (
