@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
+import { useHistory } from 'react-router-dom';
 
 function MovieList() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const movies = useSelector(store => store.movies);
 
     useEffect(() => {
@@ -25,20 +27,8 @@ function MovieList() {
         //     type: 'SET_FEELING', 
         //     payload: feeling
         // })
-        // history.push('/understanding')
+        history.push('/details')
 }
-// const handleFavorite = (data) => {
-//     setIsFavorited(!isFavorited);
-//     console.log(data.url);
-//     let newFavorite = {
-//       url : data.url
-//     }
-//     //  Dispatch an action to add/remove the gif from the favorites list
-//     dispatch({
-//       type: "SAGA/ADD_FAVORITES",
-//       payload: newFavorite
-//     });
-//   };
 
     return (
         <main>
